@@ -1,396 +1,244 @@
 <!DOCTYPE html>
 
-<html lang="ru" style="color-scheme: dark; background:#0a0a0f;">
+<html lang="ru" style="background:#0a0a0f; color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Агентство — Оффер</title>
-<style>
-  @import url('https://fonts.cdnfonts.com/css/unbounded');
-</style>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=unbounded:400,700,900|inter:300,400,500,600" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
 –bg: #0a0a0f;
-–surface: #111118;
 –card: #16161f;
 –border: rgba(255,255,255,0.07);
 –accent: #ff3c3c;
 –accent2: #ff7a3c;
-–gold: #f5c842;
 –text: #f0eeea;
 –muted: #7a7a8a;
-–glow: rgba(255,60,60,0.15);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #0a0a0f; }
 
 body {
-background: #0a0a0f !important;
+background-color: #0a0a0f !important;
 color: #f0eeea !important;
-font-family: ‘Unbounded’, Arial, sans-serif;
+font-family: ‘Inter’, system-ui, sans-serif;
 font-size: 16px;
 line-height: 1.65;
 overflow-x: hidden;
-}
-
-body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 0;
-opacity: 0.5;
+-webkit-text-size-adjust: 100%;
 }
 
 .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-/* ─── HERO ─── */
+/* ── HERO ── */
 .hero {
 min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
+display: flex; align-items: center; justify-content: center;
 text-align: center;
 position: relative;
 padding: 80px 24px;
+background-color: #0a0a0f;
 }
-
 .hero-bg {
-position: absolute;
-inset: 0;
+position: absolute; inset: 0;
 background:
-radial-gradient(ellipse 60% 50% at 50% 30%, rgba(255,60,60,0.12) 0%, transparent 70%),
-radial-gradient(ellipse 40% 30% at 80% 80%, rgba(255,122,60,0.08) 0%, transparent 60%);
+radial-gradient(ellipse 60% 50% at 50% 30%, rgba(255,60,60,0.15) 0%, transparent 70%),
+radial-gradient(ellipse 40% 30% at 80% 80%, rgba(255,122,60,0.1) 0%, transparent 60%);
 pointer-events: none;
 }
-
 .hero-label {
 display: inline-block;
 font-family: ‘Unbounded’, sans-serif;
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: var(–accent);
-border: 1px solid rgba(255,60,60,0.35);
-padding: 6px 16px;
-border-radius: 100px;
+font-size: 10px; font-weight: 700;
+letter-spacing: 0.25em; text-transform: uppercase;
+color: #ff3c3c;
+border: 1px solid rgba(255,60,60,0.4);
+padding: 6px 16px; border-radius: 100px;
 margin-bottom: 32px;
-animation: fadeUp 0.8s ease both;
 }
-
 .hero h1 {
 font-family: ‘Unbounded’, sans-serif;
 font-size: clamp(32px, 6vw, 68px);
-font-weight: 900;
-line-height: 1.05;
+font-weight: 900; line-height: 1.05;
 letter-spacing: -0.02em;
+color: #f0eeea;
 margin-bottom: 28px;
-animation: fadeUp 0.9s 0.1s ease both;
 }
-
 .hero h1 span {
-background: linear-gradient(135deg, var(–accent) 0%, var(–accent2) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+background: linear-gradient(135deg, #ff3c3c 0%, #ff7a3c 100%);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text;
 }
-
 .hero-sub {
 font-size: clamp(16px, 2vw, 20px);
-color: var(–muted);
-max-width: 620px;
-margin: 0 auto 48px;
-font-weight: 400;
-animation: fadeUp 1s 0.2s ease both;
+color: #7a7a8a;
+max-width: 620px; margin: 0 auto 48px;
 }
-
 .hero-cta {
 display: inline-block;
-background: linear-gradient(135deg, var(–accent) 0%, var(–accent2) 100%);
-color: #fff;
+background: linear-gradient(135deg, #ff3c3c 0%, #ff7a3c 100%);
+color: #fff !important;
 font-family: ‘Unbounded’, sans-serif;
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-padding: 18px 44px;
-border-radius: 100px;
+font-size: 13px; font-weight: 700;
+letter-spacing: 0.05em; text-transform: uppercase;
+padding: 18px 44px; border-radius: 100px;
 text-decoration: none;
 box-shadow: 0 0 40px rgba(255,60,60,0.3);
 transition: transform 0.2s, box-shadow 0.2s;
-animation: fadeUp 1.1s 0.3s ease both;
 }
-.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 0 60px rgba(255,60,60,0.45); }
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 0 60px rgba(255,60,60,0.5); }
 
-/* ─── SECTION ─── */
-section { padding: 100px 0; }
-
+/* ── SECTIONS ── */
+section {
+padding: 100px 0;
+background-color: #0a0a0f;
+}
 .section-label {
 font-family: ‘Unbounded’, sans-serif;
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: var(–accent);
-margin-bottom: 16px;
+font-size: 10px; font-weight: 700;
+letter-spacing: 0.25em; text-transform: uppercase;
+color: #ff3c3c; margin-bottom: 16px;
 }
-
 h2 {
 font-family: ‘Unbounded’, sans-serif;
 font-size: clamp(26px, 4vw, 44px);
-font-weight: 900;
-line-height: 1.1;
+font-weight: 900; line-height: 1.1;
 letter-spacing: -0.02em;
+color: #f0eeea;
 margin-bottom: 20px;
 }
+h2 em { font-style: normal; color: #ff3c3c; }
+.lead { font-size: 18px; color: #7a7a8a; max-width: 560px; margin-bottom: 60px; }
 
-h2 em { font-style: normal; color: var(–accent); }
-
-.lead {
-font-size: 18px;
-color: var(–muted);
-max-width: 560px;
-margin-bottom: 60px;
-}
-
-/* ─── PAIN CARDS ─── */
+/* ── PAIN GRID ── */
 .pain-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 gap: 1px;
-background: var(–border);
-border: 1px solid var(–border);
-border-radius: 20px;
-overflow: hidden;
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 20px; overflow: hidden;
 }
-
 .pain-card {
-background: var(–card);
+background: #16161f;
 padding: 32px 28px;
 transition: background 0.3s;
 }
-.pain-card:hover { background: #1c1c28; }
-
-.pain-icon {
-font-size: 28px;
-margin-bottom: 14px;
-display: block;
-}
-
+.pain-card:hover { background: #1c1c2a; }
+.pain-icon { font-size: 28px; margin-bottom: 14px; display: block; }
 .pain-card h3 {
 font-family: ‘Unbounded’, sans-serif;
-font-size: 14px;
-font-weight: 700;
-margin-bottom: 10px;
-color: var(–text);
+font-size: 14px; font-weight: 700;
+color: #f0eeea; margin-bottom: 10px;
 }
+.pain-card p { font-size: 14px; color: #7a7a8a; line-height: 1.6; }
 
-.pain-card p {
-font-size: 14px;
-color: var(–muted);
-line-height: 1.6;
-}
-
-/* ─── SERVICES ─── */
-.services-list { display: flex; flex-direction: column; gap: 2px; }
-
+/* ── SERVICES ── */
+.services-list { display: flex; flex-direction: column; gap: 12px; }
 .service-item {
-background: var(–card);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 36px 40px;
-display: grid;
-grid-template-columns: auto 1fr;
-gap: 28px;
-align-items: start;
+background: #16161f;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 16px; padding: 36px 40px;
+display: grid; grid-template-columns: auto 1fr;
+gap: 28px; align-items: start;
 transition: border-color 0.3s, transform 0.3s;
-cursor: default;
 }
-.service-item:hover {
-border-color: rgba(255,60,60,0.3);
-transform: translateX(4px);
-}
-
+.service-item:hover { border-color: rgba(255,60,60,0.35); transform: translateX(4px); }
 .service-num {
 font-family: ‘Unbounded’, sans-serif;
-font-size: 11px;
-font-weight: 700;
-color: var(–accent);
-letter-spacing: 0.1em;
-padding-top: 4px;
-white-space: nowrap;
+font-size: 11px; font-weight: 700;
+color: #ff3c3c; letter-spacing: 0.1em;
+padding-top: 4px; white-space: nowrap;
 }
-
 .service-item h3 {
 font-family: ‘Unbounded’, sans-serif;
-font-size: 18px;
-font-weight: 700;
-margin-bottom: 10px;
-line-height: 1.25;
+font-size: 18px; font-weight: 700;
+color: #f0eeea; margin-bottom: 10px; line-height: 1.25;
 }
-
-.service-item p {
-font-size: 15px;
-color: var(–muted);
-margin-bottom: 18px;
-}
-
-.service-tags {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-}
-
+.service-item p { font-size: 15px; color: #7a7a8a; margin-bottom: 18px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
-font-size: 12px;
-font-weight: 500;
-color: var(–accent2);
+font-size: 12px; font-weight: 500;
+color: #ff7a3c;
 background: rgba(255,122,60,0.1);
-border: 1px solid rgba(255,122,60,0.2);
-padding: 4px 12px;
-border-radius: 100px;
+border: 1px solid rgba(255,122,60,0.25);
+padding: 4px 12px; border-radius: 100px;
 }
 
-/* ─── RESULTS ─── */
+/* ── RESULTS ── */
 .results-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 24px;
-margin-bottom: 60px;
+gap: 24px; margin-bottom: 60px;
 }
-
 .result-card {
-background: var(–card);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 32px 24px;
-text-align: center;
+background: #16161f;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 16px; padding: 32px 24px; text-align: center;
 }
-
 .result-num {
 font-family: ‘Unbounded’, sans-serif;
-font-size: clamp(36px, 5vw, 52px);
-font-weight: 900;
-background: linear-gradient(135deg, var(–accent) 0%, var(–accent2) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-line-height: 1;
-margin-bottom: 10px;
+font-size: clamp(36px, 5vw, 52px); font-weight: 900;
+background: linear-gradient(135deg, #ff3c3c 0%, #ff7a3c 100%);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text; line-height: 1; margin-bottom: 10px;
 }
+.result-card p { font-size: 13px; color: #7a7a8a; line-height: 1.5; }
 
-.result-card p {
-font-size: 13px;
-color: var(–muted);
-line-height: 1.5;
-}
-
-/* ─── WHO ─── */
+/* ── WHO ── */
 .who-list {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 gap: 16px;
 }
-
 .who-item {
-display: flex;
-align-items: flex-start;
-gap: 14px;
-background: var(–card);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 20px 22px;
+display: flex; align-items: flex-start; gap: 14px;
+background: #16161f;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 14px; padding: 20px 22px;
 }
-
 .who-item::before {
-content: ‘→’;
-color: var(–accent);
-font-weight: 700;
-font-size: 16px;
-margin-top: 2px;
-flex-shrink: 0;
+content: ‘→’; color: #ff3c3c;
+font-weight: 700; font-size: 16px;
+margin-top: 2px; flex-shrink: 0;
 }
+.who-item span { font-size: 14px; color: #f0eeea; line-height: 1.5; }
 
-.who-item span {
-font-size: 14px;
-color: var(–text);
-line-height: 1.5;
-}
-
-/* ─── OFFER BLOCK ─── */
+/* ── CTA ── */
 .offer-block {
-background: linear-gradient(135deg, rgba(255,60,60,0.08) 0%, rgba(255,122,60,0.05) 100%);
-border: 1px solid rgba(255,60,60,0.2);
-border-radius: 24px;
-padding: 60px 52px;
-text-align: center;
-position: relative;
-overflow: hidden;
+background: linear-gradient(135deg, rgba(255,60,60,0.09) 0%, rgba(255,122,60,0.06) 100%);
+border: 1px solid rgba(255,60,60,0.25);
+border-radius: 24px; padding: 60px 52px;
+text-align: center; position: relative; overflow: hidden;
 }
-
 .offer-block::before {
 content: ‘’;
-position: absolute;
-top: -80px;
-left: 50%;
-transform: translateX(-50%);
-width: 400px;
-height: 400px;
-background: radial-gradient(circle, rgba(255,60,60,0.12) 0%, transparent 70%);
+position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+width: 400px; height: 400px;
+background: radial-gradient(circle, rgba(255,60,60,0.14) 0%, transparent 70%);
 pointer-events: none;
 }
-
-.offer-block h2 {
-font-size: clamp(26px, 4vw, 42px);
-margin-bottom: 16px;
-}
-
-.offer-block p {
-font-size: 17px;
-color: var(–muted);
-max-width: 520px;
-margin: 0 auto 40px;
-}
-
+.offer-block h2 { font-size: clamp(26px, 4vw, 42px); margin-bottom: 16px; }
+.offer-block p { font-size: 17px; color: #7a7a8a; max-width: 520px; margin: 0 auto 40px; }
 .offer-btn {
 display: inline-block;
-background: linear-gradient(135deg, var(–accent) 0%, var(–accent2) 100%);
-color: #fff;
+background: linear-gradient(135deg, #ff3c3c 0%, #ff7a3c 100%);
+color: #fff !important; text-decoration: none;
 font-family: ‘Unbounded’, sans-serif;
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-padding: 20px 52px;
-border-radius: 100px;
-text-decoration: none;
+font-size: 13px; font-weight: 700;
+letter-spacing: 0.05em; text-transform: uppercase;
+padding: 20px 52px; border-radius: 100px;
 box-shadow: 0 0 60px rgba(255,60,60,0.25);
 transition: transform 0.2s, box-shadow 0.2s;
 }
-.offer-btn:hover { transform: translateY(-4px); box-shadow: 0 0 80px rgba(255,60,60,0.4); }
+.offer-btn:hover { transform: translateY(-4px); box-shadow: 0 0 80px rgba(255,60,60,0.45); }
+.offer-sub { font-size: 13px; color: #7a7a8a; margin-top: 20px; }
 
-.offer-sub {
-font-size: 13px;
-color: var(–muted);
-margin-top: 20px;
-}
-
-/* ─── DIVIDER ─── */
-.divider {
-border: none;
-border-top: 1px solid var(–border);
-margin: 0;
-}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(24px); }
-to   { opacity: 1; transform: translateY(0); }
-}
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 0; }
 
 @media (max-width: 600px) {
 .service-item { grid-template-columns: 1fr; gap: 8px; padding: 28px 24px; }
@@ -400,8 +248,6 @@ to   { opacity: 1; transform: translateY(0); }
 
 </head>
 <body>
-
-<!-- ══════════ HERO ══════════ -->
 
 <section class="hero">
   <div class="hero-bg"></div>
@@ -415,173 +261,98 @@ to   { opacity: 1; transform: translateY(0); }
 
 <hr class="divider">
 
-<!-- ══════════ БОЛИ ══════════ -->
-
 <section>
   <div class="wrap">
     <div class="section-label">Узнаёте себя?</div>
-    <h2>Почему товар <em>есть</em>,<br>а продаж — нет</h2>
+    <h2>Почему товар <em>есть</em>, а продаж — нет</h2>
     <p class="lead">Большинство продавцов теряют деньги не из-за плохого товара, а из-за слабой упаковки. Вот боли, которые мы слышим каждый день:</p>
-
-```
-<div class="pain-grid">
-  <div class="pain-card">
-    <span class="pain-icon">📉</span>
-    <h3>Карточки не кликают</h3>
-    <p>Низкий CTR — деньги на трафик сливаются впустую. Покупатель проматывает ваш товар, даже не остановившись.</p>
-  </div>
-  <div class="pain-card">
-    <span class="pain-icon">😐</span>
-    <h3>Фото как у всех</h3>
-    <p>Серый фон, размытые снимки, ноль эмоции. Конкурент рядом — и покупатель уходит к нему.</p>
-  </div>
-  <div class="pain-card">
-    <span class="pain-icon">🔍</span>
-    <h3>Не находят в поиске</h3>
-    <p>Карточки без SEO — это невидимки. Никакого органического трафика, только платная реклама.</p>
-  </div>
-  <div class="pain-card">
-    <span class="pain-icon">⏳</span>
-    <h3>Нет времени на контент</h3>
-    <p>У вас 200 позиций, а делать карточки вручную — это недели работы. В итоге откладывается вечно.</p>
-  </div>
-  <div class="pain-card">
-    <span class="pain-icon">💸</span>
-    <h3>Бюджет в рекламу — ноль отдачи</h3>
-    <p>Трафик есть, но конверсия мизерная. Деньги утекают, потому что карточка не «продаёт» даже при переходе.</p>
-  </div>
-  <div class="pain-card">
-    <span class="pain-icon">🕳️</span>
-    <h3>Воронка течёт везде</h3>
-    <p>Люди заходят на сайт или в магазин — и уходят. Непонятно, где потеря. Непонятно, что чинить.</p>
-  </div>
-</div>
-```
-
+    <div class="pain-grid">
+      <div class="pain-card"><span class="pain-icon">📉</span><h3>Карточки не кликают</h3><p>Низкий CTR — деньги на трафик сливаются впустую. Покупатель проматывает ваш товар, даже не остановившись.</p></div>
+      <div class="pain-card"><span class="pain-icon">😐</span><h3>Фото как у всех</h3><p>Серый фон, размытые снимки, ноль эмоции. Конкурент рядом — и покупатель уходит к нему.</p></div>
+      <div class="pain-card"><span class="pain-icon">🔍</span><h3>Не находят в поиске</h3><p>Карточки без SEO — это невидимки. Никакого органического трафика, только платная реклама.</p></div>
+      <div class="pain-card"><span class="pain-icon">⏳</span><h3>Нет времени на контент</h3><p>У вас 200 позиций, а делать карточки вручную — это недели работы. В итоге откладывается вечно.</p></div>
+      <div class="pain-card"><span class="pain-icon">💸</span><h3>Бюджет в рекламу — ноль отдачи</h3><p>Трафик есть, но конверсия мизерная. Деньги утекают, потому что карточка не «продаёт» даже при переходе.</p></div>
+      <div class="pain-card"><span class="pain-icon">🕳️</span><h3>Воронка течёт везде</h3><p>Люди заходят на сайт или в магазин — и уходят. Непонятно, где потеря. Непонятно, что чинить.</p></div>
+    </div>
   </div>
 </section>
 
 <hr class="divider">
-
-<!-- ══════════ УСЛУГИ ══════════ -->
 
 <section id="services">
   <div class="wrap">
     <div class="section-label">Что мы делаем</div>
-    <h2>Три направления —<br>одна цель: <em>рост продаж</em></h2>
+    <h2>Три направления — одна цель: <em>рост продаж</em></h2>
     <p class="lead">Мы не просто делаем «красиво». Каждый элемент заточен под конверсию и поведение покупателя на конкретной платформе.</p>
-
-```
-<div class="services-list">
-  <div class="service-item">
-    <div class="service-num">01</div>
-    <div>
-      <h3>Авито: полная упаковка магазина</h3>
-      <p>Берём ваш магазин на Авито и превращаем его в машину по генерации заявок. Делаем продающие фото и видео, создаём объявления с высоким CTR, прорабатываем SEO под поисковые запросы площадки. Работаем пакетно — быстро и без потери качества.</p>
-      <div class="service-tags">
-        <span class="tag">Фото и видео контент</span>
-        <span class="tag">Продающий текст объявления</span>
-        <span class="tag">SEO под Авито</span>
-        <span class="tag">Пакетный формат</span>
-        <span class="tag">Нейросети + ручная работа</span>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div>
+          <h3>Авито: полная упаковка магазина</h3>
+          <p>Берём ваш магазин на Авито и превращаем его в машину по генерации заявок. Делаем продающие фото и видео, создаём объявления с высоким CTR, прорабатываем SEO под поисковые запросы площадки. Работаем пакетно — быстро и без потери качества.</p>
+          <div class="service-tags">
+            <span class="tag">Фото и видео контент</span><span class="tag">Продающий текст объявления</span><span class="tag">SEO под Авито</span><span class="tag">Пакетный формат</span><span class="tag">Нейросети + ручная работа</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div>
+          <h3>Интернет-магазин: контент и конверсия</h3>
+          <p>Аудит воронки — находим, где вы теряете покупателей. Создаём контент и креативы, которые работают на каждом этапе пути клиента. При необходимости — доработка или разработка сайта с нуля, чтобы воронка не текла.</p>
+          <div class="service-tags">
+            <span class="tag">Аудит и анализ слабых мест</span><span class="tag">Контент с помощью ИИ</span><span class="tag">Разработка / доработка сайта</span><span class="tag">Повышение конверсии</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div>
+          <h3>Wildberries и Ozon: карточки и рост</h3>
+          <p>Создаём карточки товаров, которые выигрывают конкуренцию в выдаче. SEO-оптимизированные заголовки и описания, инфографика, продающие фото. Пакетное создание под весь каталог. Цель — вывести ваши позиции на новый уровень продаж.</p>
+          <div class="service-tags">
+            <span class="tag">Карточки WB и Ozon</span><span class="tag">SEO-тексты и заголовки</span><span class="tag">Инфографика и фото</span><span class="tag">Пакетный контент</span><span class="tag">ИИ-ускорение</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="service-item">
-    <div class="service-num">02</div>
-    <div>
-      <h3>Интернет-магазин: контент и конверсия</h3>
-      <p>Аудит воронки — находим, где вы теряете покупателей. Создаём контент и креативы, которые работают на каждом этапе пути клиента. При необходимости — доработка или разработка сайта с нуля, чтобы воронка не текла.</p>
-      <div class="service-tags">
-        <span class="tag">Аудит и анализ слабых мест</span>
-        <span class="tag">Контент с помощью ИИ</span>
-        <span class="tag">Разработка / доработка сайта</span>
-        <span class="tag">Повышение конверсии</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-item">
-    <div class="service-num">03</div>
-    <div>
-      <h3>Wildberries и Ozon: карточки и рост</h3>
-      <p>Создаём карточки товаров, которые выигрывают конкуренцию в выдаче. SEO-оптимизированные заголовки и описания, инфографика, продающие фото. Пакетное создание под весь каталог. Цель — вывести ваши позиции на новый уровень продаж.</p>
-      <div class="service-tags">
-        <span class="tag">Карточки WB и Ozon</span>
-        <span class="tag">SEO-тексты и заголовки</span>
-        <span class="tag">Инфографика и фото</span>
-        <span class="tag">Пакетный контент</span>
-        <span class="tag">ИИ-ускорение</span>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
   </div>
 </section>
 
 <hr class="divider">
-
-<!-- ══════════ РЕЗУЛЬТАТЫ ══════════ -->
 
 <section>
   <div class="wrap">
     <div class="section-label">Что вы получаете</div>
-    <h2>Измеримый результат,<br>а не <em>просто контент</em></h2>
+    <h2>Измеримый результат, а не <em>просто контент</em></h2>
     <p class="lead">Мы оцениваем работу не лайками, а цифрами: кликабельность, конверсия, оборот.</p>
-
-```
-<div class="results-grid">
-  <div class="result-card">
-    <div class="result-num">×3</div>
-    <p>Рост кликабельности карточки после переработки</p>
-  </div>
-  <div class="result-card">
-    <div class="result-num">−60%</div>
-    <p>Снижение стоимости заявки при том же бюджете на рекламу</p>
-  </div>
-  <div class="result-card">
-    <div class="result-num">200+</div>
-    <p>Карточек в пакете — без потери качества и сроков</p>
-  </div>
-  <div class="result-card">
-    <div class="result-num">7 дн</div>
-    <p>Средний срок запуска первого пакета контента</p>
-  </div>
-</div>
-```
-
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">×3</div><p>Рост кликабельности карточки после переработки</p></div>
+      <div class="result-card"><div class="result-num">−60%</div><p>Снижение стоимости заявки при том же бюджете на рекламу</p></div>
+      <div class="result-card"><div class="result-num">200+</div><p>Карточек в пакете — без потери качества и сроков</p></div>
+      <div class="result-card"><div class="result-num">7 дн</div><p>Средний срок запуска первого пакета контента</p></div>
+    </div>
   </div>
 </section>
 
 <hr class="divider">
-
-<!-- ══════════ КТО МЫ ДЛЯ ══════════ -->
 
 <section>
   <div class="wrap">
     <div class="section-label">Для кого</div>
-    <h2>Вы точно наш клиент,<br><em>если...</em></h2>
-
-```
-<div class="who-list">
-  <div class="who-item"><span>У вас магазин на Авито с 10+ товарами или услугами, но заявок — кот наплакал</span></div>
-  <div class="who-item"><span>Вы продаёте на WB или Ozon и видите, как конкуренты с похожим товаром продают в разы больше</span></div>
-  <div class="who-item"><span>Вы запустили сайт или интернет-магазин, но трафик не превращается в покупки</span></div>
-  <div class="who-item"><span>У вас большой каталог и физически нет ресурса делать качественный контент вручную</span></div>
-  <div class="who-item"><span>Вы уже тратите деньги на рекламу, но ROI не устраивает — подозреваете, что дело в упаковке</span></div>
-  <div class="who-item"><span>Вы хотите системно вырасти на маркетплейсе или площадке, а не просто «подправить фото»</span></div>
-</div>
-```
-
+    <h2>Вы точно наш клиент, <em>если...</em></h2>
+    <div class="who-list">
+      <div class="who-item"><span>У вас магазин на Авито с 10+ товарами или услугами, но заявок — кот наплакал</span></div>
+      <div class="who-item"><span>Вы продаёте на WB или Ozon и видите, как конкуренты с похожим товаром продают в разы больше</span></div>
+      <div class="who-item"><span>Вы запустили сайт или интернет-магазин, но трафик не превращается в покупки</span></div>
+      <div class="who-item"><span>У вас большой каталог и физически нет ресурса делать качественный контент вручную</span></div>
+      <div class="who-item"><span>Вы уже тратите деньги на рекламу, но ROI не устраивает — подозреваете, что дело в упаковке</span></div>
+      <div class="who-item"><span>Вы хотите системно вырасти на маркетплейсе или площадке, а не просто «подправить фото»</span></div>
+    </div>
   </div>
 </section>
 
 <hr class="divider">
-
-<!-- ══════════ CTA ══════════ -->
 
 <section>
   <div class="wrap">
